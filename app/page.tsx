@@ -1,7 +1,10 @@
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
+import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaQuoteLeft } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { AiOutlineProject } from "react-icons/ai";
 
 export default function Home() {
   return (
@@ -9,15 +12,20 @@ export default function Home() {
       <div className="w-full max-w-7xl">
         <FloatingNav
           navItems={[
-            { name: "Home", icon: <FaHome />, link: "/" },
-            { name: "Home", icon: <FaHome />, link: "/" },
-            { name: "Home", icon: <FaHome />, link: "/" },
-            { name: "Home", icon: <FaHome />, link: "/" },
-            { name: "Home", icon: <FaHome />, link: "/" },
+            { name: "Home", icon: <FaHome />, link: "#about" },
+            { name: "projects", icon: <AiOutlineProject />, link: "#projects" },
+            {
+              name: "testimonials",
+              icon: <FaQuoteLeft />,
+              link: "#testimonials",
+            },
+            { name: "contact", icon: <MdEmail />, link: "#contact" },
           ]}
         />
+
         <Hero />
         <Grid />
+        <RecentProjects />
       </div>
     </main>
   );

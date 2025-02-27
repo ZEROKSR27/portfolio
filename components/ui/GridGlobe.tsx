@@ -23,12 +23,13 @@ const GridGlobe = () => {
     pointLight: "#ffffff",
     arcTime: 1000,
     arcLength: 0.9,
-    rings: 2,
-    maxRings: 5,
+    rings: 1,
+    maxRings: 3,
     initialPosition: { lat: 22.3193, lng: 114.1694 },
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
+
   const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
   const sampleArcs = [
     {

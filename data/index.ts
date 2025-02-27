@@ -1,10 +1,3 @@
-export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
-];
-
 export const gridItems = [
   {
     id: 1,
@@ -77,6 +70,7 @@ export const projects = [
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://github.com/adrianhajdin?tab=repositories",
+    dir: "left",
   },
   {
     id: 2,
@@ -85,6 +79,7 @@ export const projects = [
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://github.com/adrianhajdin/zoom-clone",
+    dir: "right",
   },
   {
     id: 3,
@@ -92,7 +87,8 @@ export const projects = [
     des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
     img: "/p3.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    link: "https://front-1-blue.vercel.app/",
+    dir: "left",
   },
   {
     id: 4,
@@ -101,6 +97,7 @@ export const projects = [
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://github.com/adrianhajdin/iphone",
+    dir: "right",
   },
 ];
 

@@ -1,24 +1,25 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// in the 5th line there is an error ...  i wrote it as comment
+
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
-import ThreeGlobe from "three-globe";
-import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
-{
-  /* error is : Module '"@react-three/fiber"' has no exported member 'Object3DNode'.ts(2305) */
-}
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
+import { useThree, Canvas, extend, ThreeElements } from "@react-three/fiber";
+import ThreeGlobe from "three-globe";
+
+// the problem is here :
+extend({ ThreeGlobe });
+
 declare module "@react-three/fiber" {
   interface ThreeElements {
-    threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
+    threeGlobe: ThreeElements["group"]; // Use "mesh" or "group" since ThreeGlobe is Object3D-based
   }
 }
 
-extend({ ThreeGlobe });
+// i tink the rest is all ok
 
 const RING_PROPAGATION_SPEED = 3;
 const aspect = 1.2;
@@ -230,6 +231,30 @@ export function Globe({ globeConfig, data }: WorldProps) {
     };
   }, [globeRef.current, globeData]);
 
+  useEffect(() => {
+    // Temporarily suppress console.error to hide the specific error
+    const originalConsoleError = console.error;
+    console.error = (...args) => {
+      if (
+        args.length > 0 &&
+        typeof args[0] === "string" &&
+        args[0].includes(
+          "THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN",
+        )
+      ) {
+        // Ignore this specific error
+        return;
+      }
+      // Call the original console.error for all other errors
+      originalConsoleError(...args);
+    };
+
+    // Clean up by restoring the original console.error
+    return () => {
+      console.error = originalConsoleError;
+    };
+  }, []);
+
   return (
     <>
       <threeGlobe ref={globeRef} />
@@ -310,3 +335,5 @@ export function genRandomNumbers(min: number, max: number, count: number) {
 
   return arr;
 }
+
+// i am having this error : THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The "position" attribute is likely to have NaN values. {}
