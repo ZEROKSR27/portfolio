@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import { FaFacebook, FaLocationArrow } from "react-icons/fa6";
 
 import MagicButton from "./ui/MagicButton";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -31,17 +31,17 @@ const Footer = () => {
         <div className="flex items-center gap-6 md:gap-3">
           <a href="https://www.facebook.com/ZEROKSR27">
             <div className="saturate-180 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-black-300 bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter">
-              <img src="/git.svg" alt="icons" width={20} height={20} />
+              <Image src="/git.svg" alt="icons" width={20} height={20} />
             </div>
           </a>
           <a href="https://www.facebook.com/ZEROKSR27">
             <div className="saturate-180 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-black-300 bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter">
-              <img src="/twit.svg" alt="icons" width={20} height={20} />
+              <Image src="/twit.svg" alt="icons" width={20} height={20} />
             </div>
           </a>
           <a href="https://www.facebook.com/ZEROKSR27">
             <div className="saturate-180 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-black-300 bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter">
-              <img src="/link.svg" alt="icons" width={20} height={20} />
+              <Image src="/link.svg" alt="icons" width={20} height={20} />
             </div>
           </a>
           <a href="https://www.facebook.com/ZEROKSR27">

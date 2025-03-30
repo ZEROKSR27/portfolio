@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
+import Image from "next/image";
 
 const RecentProjects = () => {
   return (
@@ -27,12 +27,13 @@ const RecentProjects = () => {
                   className="relative h-full w-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <Image src="/bg.png" alt="bgimg" fill />
                 </div>
-                <img
+                <Image
                   src={item.img}
                   alt="cover"
                   className="absolute bottom-0 z-10"
+                  fill
                 />
               </div>
 
@@ -60,7 +61,7 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <Image src={icon} alt="icon5" fill className="p-2" />
                     </div>
                   ))}
                 </div>
