@@ -21,8 +21,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
+    title: "'My Tech stack'",
+    description: "I constantly try to improve it",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -32,7 +32,7 @@ export const gridItems = [
   {
     id: 4,
     title: "Tech enthusiast with a passion for development.",
-    description: "",
+    description: "let's be honest, I am doing this for the money :)",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
     titleClassName: "justify-start",
@@ -42,8 +42,9 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
-    description: "The Inside Scoop",
+    title: "'Full-stack' Developer",
+    description:
+      "currently studying backend/descktop-applications and the news in the industry",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -52,7 +53,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Do you want to start a project together?",
+    title: "want us to start a project together?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -104,80 +105,41 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Ibrahim was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Ibrahim's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Ibrahim is the ideal partner.",
+      "Collaborating with Ibrahim was an absolute nightmare. His lack of professionalism, constant delays, and dedication to delivering catastrophic results were evident throughout our project. Ibrahim's utter disinterest in every facet of development truly stands out. If you're seeking to ruin your website and destroy your brand, Ibrahim is the ideal partner for you",
     name: "Taj Rassak",
     title: "Director of AlphaStream Technologies",
   },
   {
     quote:
-      "Collaborating with Ibrahim was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Ibrahim's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Ibrahim is the ideal partner.",
+      "Collaborating with Ibrahim was an absolute nightmare. His lack of professionalism, constant delays, and dedication to delivering catastrophic results were evident throughout our project. Ibrahim's utter disinterest in every facet of development truly stands out. If you're seeking to ruin your website and destroy your brand, Ibrahim is the ideal partner for you",
     name: "Taj Rassak2",
-    title: "Director of AlphaStream Technologies",
+    title: "Director of suiiiiiiiiiiiiiiii",
   },
   {
     quote:
-      "Collaborating with Ibrahim was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Ibrahim's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Ibrahim is the ideal partner.",
+      "Collaborating with Ibrahim was an absolute nightmare. His lack of professionalism, constant delays, and dedication to delivering catastrophic results were evident throughout our project. Ibrahim's utter disinterest in every facet of development truly stands out. If you're seeking to ruin your website and destroy your brand, Ibrahim is the ideal partner for you",
     name: "Taj Rassak3",
-    title: "Director of AlphaStream Technologies",
+    title: "Director of Google",
   },
   {
     quote:
-      "Collaborating with Ibrahim was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Ibrahim's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Ibrahim is the ideal partner.",
+      "Collaborating with Ibrahim was an absolute nightmare. His lack of professionalism, constant delays, and dedication to delivering catastrophic results were evident throughout our project. Ibrahim's utter disinterest in every facet of development truly stands out. If you're seeking to ruin your website and destroy your brand, Ibrahim is the ideal partner for you",
     name: "Taj Rassak4",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating5 with Ibrahim was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Ibrahim's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Ibrahim is the ideal partner.",
-    name: "Taj Rassak5",
-    title: "Director of AlphaStream Technologies5",
-  },
-];
-
-export const companies = [
-  {
-    id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
-  },
-  {
-    id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
-  },
-  {
-    id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
-  },
-  {
-    id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
-  },
-  {
-    id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    title: "Director of Amazon and Microsoft and Apple and Netflix",
   },
 ];
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
+    title: "Frontend Engineer",
     desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
+    title: "Mobile App Dev",
     desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
@@ -191,8 +153,8 @@ export const workExperience = [
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Desktop App Developer | backend developer (soon)",
+    desc: "In a few months (programmer-time, that is), I'll be done mastering desktop and backend development. Or so I plan, before inevitably finding more code to obsess over!",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },

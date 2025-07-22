@@ -1,4 +1,4 @@
-import { FaFacebook, FaLocationArrow } from "react-icons/fa6";
+import locationArrow from "@/public/icons/locationArrow.svg";
 
 import MagicButton from "./ui/MagicButton";
 import Image from "next/image";
@@ -15,10 +15,17 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <a href="mailto:ibrahimhaidersonics777@gmail.com">
+        <a href="mailto:ksr.27.ibrahim@gmail.com">
           <MagicButton
             title="Let's get in touch"
-            icon={<FaLocationArrow />}
+            icon={
+              <Image
+                src={locationArrow}
+                alt="locationArrow"
+                width={16}
+                height={16}
+              />
+            }
             position="right"
           />
         </a>
@@ -29,24 +36,24 @@ const Footer = () => {
         </p>
 
         <div className="flex items-center gap-6 md:gap-3">
-          <a href="https://www.facebook.com/ZEROKSR27">
+          <a href="https://github.com/ZEROKSR27">
             <div className="saturate-180 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-black-300 bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter">
               <Image src="/git.svg" alt="icons" width={20} height={20} />
             </div>
           </a>
-          <a href="https://www.facebook.com/ZEROKSR27">
+          <a href="https://github.com/ZEROKSR27">
             <div className="saturate-180 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-black-300 bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter">
               <Image src="/twit.svg" alt="icons" width={20} height={20} />
             </div>
           </a>
-          <a href="https://www.facebook.com/ZEROKSR27">
+          <a href="https://www.linkedin.com/in/ibrahim-haider-174374367/">
             <div className="saturate-180 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-black-300 bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter">
               <Image src="/link.svg" alt="icons" width={20} height={20} />
             </div>
           </a>
           <a href="https://www.facebook.com/ZEROKSR27">
             <div className="saturate-180 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-black-300 bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter">
-              <FaFacebook className="scale-110" />
+              <Image src="/fb.svg" alt="icons" width={18} height={18} />
             </div>
           </a>
         </div>

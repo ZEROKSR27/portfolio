@@ -2,9 +2,8 @@
 
 import React from "react";
 
-import { companies, testimonials } from "@/data";
+import { testimonials } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
-import Image from "next/image";
 
 const Clients = () => {
   return (
@@ -19,32 +18,8 @@ const Clients = () => {
           <InfiniteMovingCards
             items={testimonials}
             direction="right"
-            speed="normal"
+            speed="fast"
           />
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-4 max-lg:mt-10 md:gap-16">
-          {companies.map((company) => (
-            <div key={company.id}>
-              <div className="flex max-w-32 gap-2 md:max-w-60">
-                <Image
-                  src={company.img}
-                  alt={company.name}
-                  className="w-5 md:w-10"
-                  height={100}
-                  width={company.id === 4 || company.id === 5 ? 100 : 150}
-                />
-                <Image
-                  src={company.nameImg}
-                  alt={company.name}
-                  height={100}
-                  width={company.id === 4 || company.id === 5 ? 100 : 150}
-                  className="w-20 md:w-24"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

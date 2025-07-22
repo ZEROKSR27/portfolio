@@ -1,5 +1,6 @@
 "use client";
-import { FaLocationArrow } from "react-icons/fa6";
+import locationArrow from "@/public/icons/locationArrow.svg";
+
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
 import Image from "next/image";
@@ -9,7 +10,7 @@ const RecentProjects = () => {
     <div className="py-20" id="projects">
       <h1 className="heading">
         A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        <span className="text-purple">Recent projects</span>
       </h1>
       <div className="mt-10 flex flex-wrap items-center justify-center gap-16 p-4">
         {projects.map((item) => (
@@ -67,10 +68,16 @@ const RecentProjects = () => {
                 </div>
 
                 <div className="flex items-center justify-center">
-                  <p className="flex text-sm text-purple md:text-xs lg:text-xl">
+                  <p className="flex pr-2 text-sm text-purple md:text-xs lg:text-xl">
                     Check Live Site
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+
+                  <Image
+                    src={locationArrow}
+                    alt="location-arrow"
+                    width={16}
+                    height={16}
+                  />
                 </div>
               </div>
             </PinContainer>

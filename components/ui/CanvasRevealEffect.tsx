@@ -6,7 +6,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
 
-export const CanvasRevealEffect = ({
+export default function CanvasRevealEffect({
   animationSpeed = 0.4,
   opacities = [0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1],
   colors = [[0, 255, 255]],
@@ -24,7 +24,7 @@ export const CanvasRevealEffect = ({
   containerClassName?: string;
   dotSize?: number;
   showGradient?: boolean;
-}) => {
+}) {
   return (
     <div className={cn("relative h-full w-full bg-white", containerClassName)}>
       <div className="h-full w-full">
@@ -48,7 +48,7 @@ export const CanvasRevealEffect = ({
       )}
     </div>
   );
-};
+}
 
 interface DotMatrixProps {
   colors?: number[][];

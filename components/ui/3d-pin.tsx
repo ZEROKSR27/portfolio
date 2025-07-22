@@ -19,23 +19,21 @@ export const PinContainer = ({
   containerClassName?: string;
   direction: "left" | "right";
 }) => {
-  const [transform, setTransform] = useState(
-    "translate(-50%,-50%) rotateX(0deg) rotateY(0deg)",
-  );
+  const [transform, setTransform] = useState("translate(-50%,-50%) ");
 
   const onMouseEnter = () => {
     if (direction === "left") {
       setTransform(
-        "translate(-50%,-50%) rotateX(20deg)  rotateY(30deg) scale(0.8)",
+        "translate(-50%,-50%) rotateX(20deg)  rotateY(15deg) scale(0.85)",
       );
     } else {
       setTransform(
-        "translate(-50%,-50%) rotateX(60deg)  rotateY(0deg) scale(0.8)",
+        "translate(-50%,-50%) rotateX(60deg)  rotateY(-30deg) scale(0.7)",
       );
     }
   };
   const onMouseLeave = () => {
-    setTransform("translate(-50%,-50%) rotateX(0deg) rotateY(0deg) scale(1)");
+    setTransform("translate(-50%,-50%) ");
   };
 
   return (

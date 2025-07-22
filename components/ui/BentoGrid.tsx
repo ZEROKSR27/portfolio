@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState } from "react";
-import { IoCopyOutline } from "react-icons/io5";
-import Lottie from "react-lottie";
+import CopySVG from "@/public/icons/copy.svg";
+import Lottie from "lottie-react";
+
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import world from "../../public/worldMap.png";
@@ -35,7 +35,6 @@ export const BentoGridItem = ({
   id,
   title,
   description,
-  //   remove unecessary things here
   img,
   imgClassName,
   titleClassName,
@@ -50,19 +49,10 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["React-Native", "Express", "Typescript"];
+  const rightLists = ["NextJS", "Docker", "GSAP"];
 
   const [copied, setCopied] = useState(false);
-
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   const handleCopy = () => {
     const text = "ibrahimhaidersonics777@gmail.com";
@@ -77,7 +67,7 @@ export const BentoGridItem = ({
     <div
       className={cn(
         // remove p-4 rounded-3xl dark:bg-black dark:border-white/[0.2] bg-white  border border-transparent, add border border-white/[0.1] overflow-hidden relative
-        "group/bento relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white/[0.1] shadow-input transition duration-200 hover:shadow-xl dark:shadow-none",
+        "group/bento relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-blue-400/[0.4] shadow-input transition duration-200 hover:shadow-xl dark:shadow-none",
         className,
       )}
       style={{
@@ -92,28 +82,32 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="absolute h-full w-full">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
               className={cn(imgClassName, "object-cover object-center")}
+              width={`${700}`}
+              height={`${550}`}
+              priority
             />
           )}
         </div>
-        <div
-          className={`absolute -bottom-5 right-0 ${
-            id === 5 && "w-full opacity-80"
-          } `}
-        >
-          {spareImg && (
-            <Image
-              src={spareImg}
-              alt={spareImg}
-              width={220}
-              height={220}
-              className="h-full w-full object-cover object-center"
-            />
-          )}
-        </div>
+        {spareImg && (
+          <div
+            className={`absolute -bottom-5 right-0 h-[130px] w-[400px] ${
+              id === 5 && "h-[100%] w-[100%]"
+            } `}
+          >
+            {
+              <Image
+                src={spareImg}
+                alt={spareImg}
+                fill
+                className="h-full w-full object-cover object-center"
+              />
+            }
+          </div>
+        )}
         {id === 6 && (
           // add background animation , remove the p tag
           <BackgroundGradientAnimation>
@@ -128,41 +122,38 @@ export const BentoGridItem = ({
           )}
         >
           {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-          <div className="z-10 font-sans text-sm font-extralight text-[#C1C2D3] md:max-w-32 md:text-xs lg:text-base">
-            {description}
-          </div>
-          {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
-          {/* remove mb-2 mt-2 */}
+
           <div
             className={`z-10 max-w-96 font-sans text-lg font-bold lg:text-3xl`}
           >
             {title}
           </div>
 
+          <div className="z-10 font-sans text-sm font-extralight text-[#C1C2D3] md:max-w-72 md:text-xs lg:text-base">
+            {description}
+          </div>
           {/* for the github 3d globe */}
-          {id === 2 && <Image src={world} alt="world map" sizes="" fill />}
+          {id === 2 && <Image src={world} alt="world map" fill />}
 
           {/* this is the Tech stack list div */}
           {id === 3 && (
-            <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
+            <div className="absolute -right-3 flex w-fit gap-1 lg:gap-6">
               {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+              <div className="flex flex-col gap-3 pt-5 md:gap-5">
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:text-base lg:opacity-100"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="rounded-lg bg-[#10132E] px-3 py-4 text-center lg:px-3 lg:py-4"></span>
               </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="rounded-lg bg-[#10132E] px-3 py-4 text-center lg:px-3 lg:py-4"></span>
+              <div className="flex flex-col gap-3 md:gap-5">
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:text-base lg:opacity-100"
                   >
                     {item}
                   </span>
@@ -180,15 +171,23 @@ export const BentoGridItem = ({
                 <Image
                   src="/confetti.gif"
                   alt="confetti"
+                  unoptimized
                   height={200}
                   width={400}
                 />
-                <Lottie options={defaultOptions} height={200} width={400} />
+
+                <Lottie
+                  animationData={animationData}
+                  loop={copied}
+                  autoplay={copied}
+                  style={{ height: 200, width: 400 }}
+                  rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+                />
               </div>
 
               <MagicButton
                 title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
+                icon={<Image src={CopySVG} alt="copy" width={16} height={16} />}
                 position="left"
                 handleClick={handleCopy}
                 other="!bg-[#161A31]"

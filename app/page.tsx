@@ -1,14 +1,28 @@
-import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
-import RecentProjects from "@/components/RecentProjects";
-import { FloatingNav } from "@/components/ui/FloatingNav";
-import { FaHome, FaQuoteLeft } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { AiOutlineProject } from "react-icons/ai";
-import Clients from "@/components/Clients";
-import Experience from "@/components/Experience";
-import Approach from "@/components/Approach";
-import Footer from "@/components/Footer";
+import Grid from "@/components/Grid";
+import dynamic from "next/dynamic";
+import Spinner from "@/components/ui/spinner";
+const Footer = dynamic(() => import("@/components/Footer"), {
+  loading: () => <Spinner />,
+});
+
+// now Dynamically reImport all the other components that are used in this file
+
+const FloatingNav = dynamic(() => import("@/components/ui/FloatingNav"), {
+  loading: () => <Spinner />,
+});
+const RecentProjects = dynamic(() => import("@/components/RecentProjects"), {
+  loading: () => <Spinner />,
+});
+const Clients = dynamic(() => import("@/components/Clients"), {
+  loading: () => <Spinner />,
+});
+const Experience = dynamic(() => import("@/components/Experience"), {
+  loading: () => <Spinner />,
+});
+const Approach = dynamic(() => import("@/components/Approach"), {
+  loading: () => <Spinner />,
+});
 
 export default function Home() {
   return (
@@ -16,14 +30,14 @@ export default function Home() {
       <div className="w-full max-w-7xl">
         <FloatingNav
           navItems={[
-            { name: "Home", icon: <FaHome />, link: "#about" },
-            { name: "projects", icon: <AiOutlineProject />, link: "#projects" },
+            { name: "Home", link: "#about" },
+            { name: "projects", link: "#projects" },
             {
               name: "testimonials",
-              icon: <FaQuoteLeft />,
+
               link: "#testimonials",
             },
-            { name: "contact", icon: <MdEmail />, link: "#contact" },
+            { name: "contact", link: "#contact" },
           ]}
         />
 

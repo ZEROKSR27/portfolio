@@ -2,7 +2,8 @@ import React from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/Text-generate-effect";
 import MagicButton from "./ui/MagicButton";
-import { FaLocationArrow } from "react-icons/fa6";
+import locationArrow from "@/public/icons/locationArrow.svg";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -28,7 +29,7 @@ const Hero = () => {
       <div className="relative z-10 my-20 flex justify-center">
         <div className="flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
           <h2 className="max-w-80 text-center text-xs uppercase tracking-widest text-blue-100">
-            Dynamic Web Magic with Next.js
+            I built this very long ago but I&apos;m buisy to rebuild it now.
           </h2>
 
           <TextGenerateEffect
@@ -43,7 +44,14 @@ const Hero = () => {
           <a href="#about">
             <MagicButton
               title="Show my work"
-              icon={<FaLocationArrow />}
+              icon={
+                <Image
+                  src={locationArrow}
+                  alt="locationArrow"
+                  width={16}
+                  height={16}
+                />
+              }
               position="right"
             />
           </a>
